@@ -1,0 +1,8 @@
+{
+    "env": {
+        "name": "DEV"
+     },
+    "apiServer": {
+        "baseUrl": "https://zemoga-ui-test-server.herokuapp.com/"
+    }
+}

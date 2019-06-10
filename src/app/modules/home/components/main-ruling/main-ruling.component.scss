@@ -1,0 +1,78 @@
+@import '~src/assets/scss/vars.scss';
+
+.main-ruling {
+    height: 700px;
+    margin-top: -16px;
+    position: relative;
+    background-repeat: no-repeat;
+    .info {
+        position: relative;
+        padding-top: 160px;
+        margin-left: 100px;
+        max-width: 400px;
+        background-color: rgba(112,112,112,0.30196078431372547);
+        background-clip: content-box;
+        
+        .description {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .more-info {
+            margin-left: 5px;
+        }
+        .veredict {
+            margin-top: 45px;
+            font-weight: 700;
+            line-height: 24px;
+            margin-bottom: 34px;
+        }
+        .thumb-up, .thumb-down {
+            width: 50%;
+            height: 81px;
+            img {
+                width: 38px;
+                height: 38px;
+            }
+            cursor: pointer;
+        }
+
+        .thumb-up {
+            background-color: $turquoise;
+        }
+
+        .thumb-down {
+            background-color: $orange;
+        }
+    }
+    .closing {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        .closing-text {
+            width: 34%;
+            text-align: right;
+            height: 50px;
+            background-color: rgba(112,112,112,0.30196078431372547);
+            font-size: 13px;
+            line-height: 21px;
+            font-weight: 400;
+            vertical-align: middle;
+            span {
+                padding-right: 10px;
+            }
+        }
+        .closing-days {
+            color: $black;
+            width: 66%;
+            text-align: left;
+            height: 50px;
+            background-color: rgba(255,255,255,0.7019607843137254);
+            font-size: 37px;
+            line-height: 50px;
+            font-weight: 400;
+            span {
+                padding-left: 17px;
+            }
+        }
+    }
+}

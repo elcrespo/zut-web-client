@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+$font-family-lato: 'Lato', sans-serif;
+
+
+// Font weights
+$light: 100;
+$regular: 300;
+$bold: 700;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+// $fixed-line-height: $base-line-height;
+
+// Headings
+$header-font-weight: $bold;
+
+// _font-sizes.scss
+$font-sizes: 8px 10px 12px 14px 16px 18px 20px 24px 32px 34px 60px;
+
+@each $font-size in $font-sizes {
+  .font-size-#{$font-size} {
+    font-size: $font-size;
+  }
+}

@@ -1,0 +1,50 @@
+<article  fxLayout="column" fxLayoutAlign="end none"
+          *ngIf="(ruling$ | async) as ruling"
+          [ngStyle]="{'background-image':'url('+ruling.imgPath+')'}">
+    <div class="vote thumb-up-bg" fxLayoutAlign="center center"><img src="assets/images/thumb_up.png" alt="thumb-up"></div>
+    <div class="ruling-info">
+        <div class="ruling-title">{{ruling.name}}</div>
+        <div class="ruling-detail-when-where">
+          <p><span>{{ruling.createdDate | timeAgo}}</span> in Entertainment</p>
+        </div>
+        <p class="ruling-desc">{{ruling.description}}</p>
+        <div class="ruling-detail"
+             *ngIf="!(alreadyVotedCanVoteAgain$ | async) || (voteAgain$ | async)"
+             [ngClass]="{'hidden': !(canVote$ | async)}"
+             fxLayout="row"
+             fxLayoutAlign="start center">
+          <div fxLayout="row" fxLayoutAlign="start center">
+              <div (click)="onSelectVote('1')"
+                   class="thumb thumb-up thumb-selected"
+                   [ngClass]="{'thumb-selected': (voteSelected$ | async) === '1'}"
+                   fxLayoutAlign="center center">
+                   <img src="assets/images/thumb_up.png" alt="thumb-up">
+              </div>
+              <div (click)="onSelectVote('-1')"
+                   [ngClass]="{'thumb-selected': (voteSelected$ | async) === '-1'}"
+                   class="thumb thumb-down"
+                   fxLayoutAlign="center center">
+                   <img src="assets/images/thumb_down.png" alt="thumb-down">
+              </div> 
+          </div>  
+          <button [disabled]="!(voteSelected$ | async)" (click)="onVoteClick()">Vote now</button>
+        </div>
+        <div *ngIf="(alreadyVotedCanVoteAgain$ | async) && !(voteAgain$ | async)">
+          <p>Thanks for voting</p>
+          <button (click)="onVoteAgain()">Vote Again</button>
+        </div>
+    </div>
+    <div *ngIf="(totalVotes$ | async) as totales"
+         [ngClass]="{'hidden': totales.total <= 0}"
+         class="ruling-results"
+         fxLayout="row">
+      <div class="thumb-up" *ngIf="totales.up > 0" [ngStyle]="{'width': totales.up+'%'}" fxLayout="row" fxLayoutAlign="start center" >
+        <img src="assets/images/thumb_up.png" alt="thumb-up">
+        <p>{{totales.up}}%</p>
+      </div>
+      <div class="thumb-down" *ngIf="totales.down > 0"[ngStyle]="{'width': totales.down+'%'}" fxLayout="row" fxLayoutAlign="end center" >
+        <p>{{totales.down}}%</p>
+        <img src="assets/images/thumb_down.png" alt="thumb-down">
+      </div>
+    </div>
+</article>

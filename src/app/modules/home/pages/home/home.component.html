@@ -1,0 +1,24 @@
+<div *ngIf="(vm$ | async) as vm">
+  <app-main-ruling></app-main-ruling>
+  <div class="previous-rulings-section">
+      <article class="message" fxLayout="row" fxLayoutAlign="space-between center">
+          <div class="short">
+            <div class="font-size-22px">Speak out. Be heard.</div>
+            <div class="counted">Be counted</div>
+          </div>
+          <div class="long">Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</div>
+          <div class="close"><img src="assets/images/x.png" alt="close"></div> 
+        </article>
+        <div class="previous-rulings-container">
+          <p class="votes-text">Votes</p>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+              <app-ruling *ngFor="let ruling of vm.rulings"
+                          [ruling]="ruling"
+                          [isUserLogged]="!!vm.user"
+                          (onVote)="onVote(ruling, $event)"
+              ></app-ruling>
+          </div>        
+        </div>
+        <app-submit-name></app-submit-name>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+@import '~src/assets/scss/vars.scss';
+
+article {
+    width: 500px;
+    height: 550px;
+    font-weight: 400;
+    color: $white;
+    margin-bottom: 35px;
+    position: relative;
+
+    .thumb-up-bg {
+        background-color: $turquoise;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .thumb-down-bg {
+        background-color: $orange;
+    }
+
+    .vote {
+        position: absolute;
+        left: 0;
+        bottom: 175px;
+        width: 32px;
+        height: 32px;
+        img {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    .ruling-title {
+        font-size: 45px;
+        line-height: 48px;
+    }
+
+    .ruling-info {
+        margin-left: 40px;
+        margin-bottom: 30px;
+    }
+
+    .ruling-results {
+        height: 50px;
+        font-size: 29px;
+        img {
+            width: 29px;
+            height: 29px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .thumb-up {
+            background-color: $turquoise;
+        }
+        .thumb-down {
+            background-color: $orange;
+            img {
+                margin-left: 6px;
+            }
+        }
+    }
+    .ruling-desc {
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 12px;
+        max-width: 390px;  
+    }
+
+    .ruling-detail-when-where {
+        font-size: 12px;
+        line-height: 14px;
+        margin-right: 20px;
+        p > span {
+            font-weight: 700;
+        }
+    }
+    .ruling-detail {
+        margin-top: 20px;
+        button {
+            background-color: rgba(0,0,0,0.14901960784313725);
+            border: 1px solid $white;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+            color: $white;
+            margin-left: 15px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .thumb {
+            width: 37px;
+            height: 37px;
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .thumb-selected {
+            border: solid 1.5px $white;
+        }
+
+        .thumb-up {
+            background-color: $turquoise;
+        }
+        .thumb-down {
+            background-color: $orange;
+        }
+    }
+}

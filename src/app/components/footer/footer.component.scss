@@ -1,0 +1,46 @@
+@import '~src/assets/scss/vars.scss';
+
+footer {
+    border-top: dotted 1.5px #979797;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: $black;
+    a {
+        color: $black;
+        &:visited {
+            color: $black;
+        }
+        text-decoration: none;
+    }
+    li {
+        font-size: 12px;
+        letter-spacing: 0px;
+        line-height: 19px;
+        font-weight: 300;
+        margin-right: 30px;
+    }
+
+    .follow-us {
+        width: 155px;
+        p {
+            font-size: 12px;
+            letter-spacing: 0px;
+            line-height: 19px;
+            font-weight: 300;
+        }
+        .facebook {
+            background-image: url('~src/assets/images/FB.png');
+            background-repeat: no-repeat;
+            width: 28px;
+            height: 28px;
+        }
+        .twitter {
+            background-image: url('~src/assets/images/twitter.png');
+            background-repeat: no-repeat;
+            width: 28px;
+            height: 28px;
+        }
+    }
+}

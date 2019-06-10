@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/reset.scss';
+@import './assets/scss/vars.scss';
+@import './assets/scss/font.scss';
+
+$color-background: $white;
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: $regular;
+    color: $white;
+    a {
+        color: $white;
+        &:visited {
+            color: $white;
+        }
+    }
+}
+
+.content {
+    max-width: 1250px;
+    margin: auto;
+}

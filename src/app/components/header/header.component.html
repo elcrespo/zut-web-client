@@ -1,0 +1,11 @@
+<header fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div class="main-link font-size-32px">Rule of Thumb</div>
+    <nav class="crumbs">
+      <ol fxLayout="row wrap">
+          <li class="crumb"><a href="bikes">Past Trials</a></li>
+          <li class="crumb"><a href="bikes/bmx">How it works</a></li>
+          <li *ngIf="!auth.isLoggedIn" class="crumb"><a href="/user/login">Login/Sign UP</a> </li>
+          <li *ngIf="auth.isLoggedIn" class="crumb"><a (click)="logout(e)">Logout</a> </li>
+      </ol>
+    </nav>
+  </header>
