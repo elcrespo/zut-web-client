@@ -16,6 +16,7 @@ export class RegisterComponent implements AfterViewInit {
   success$ = this.registerFacadeService.success$;
   error$ = this.registerFacadeService.error$;
   message$ = this.registerFacadeService.message$;
+  loading$ = this.registerFacadeService.loading$;
 
   ngAfterViewInit() {
     this.formIsValid$ = this.registerFormComponent
