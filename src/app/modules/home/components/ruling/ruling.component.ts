@@ -25,7 +25,7 @@ export class RulingComponent implements OnInit {
   private voteSelectedSubject: Subject<'1' | '-1'> = new Subject();
   private voteSubject: Subject<void> = new Subject();
   private isUserLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  private maxVotesPerUserSubject: BehaviorSubject<number> = new BehaviorSubject(8);
+  private maxVotesPerUserSubject: BehaviorSubject<number> = new BehaviorSubject(3);
   private rulingSubject: BehaviorSubject<Ruling> = new BehaviorSubject(undefined);
   private voteAgainSubject: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -66,8 +66,8 @@ export class RulingComponent implements OnInit {
           }
         }
         return {
-          down: ((thumbsDownTotal*100)/total).toString(),
-          up:  ((thumbsUpTotal*100)/total).toString(),
+          down: Math.round((thumbsDownTotal*100)/total).toString(),
+          up:  Math.round((thumbsUpTotal*100)/total).toString(),
           total
         }
       })
@@ -105,7 +105,7 @@ export class RulingComponent implements OnInit {
       })
     ).subscribe();
   }
-
+  // TODO: a little interface for '1' | '-1'
   onSelectVote(vote: '1' | '-1') {
     this.voteSelectedSubject.next(vote);
   }

@@ -7,6 +7,8 @@ article {
     color: $white;
     margin-bottom: 35px;
     position: relative;
+    background-repeat: no-repeat;
+    background-position-x: center;
 
     .thumb-up-bg {
         background-color: $turquoise;

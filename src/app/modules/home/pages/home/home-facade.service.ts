@@ -106,6 +106,7 @@ export class HomeFacadeService {
   }
 
   private addVoteToVotes(votes = [], vote: Vote) {
+    votes = cloneDeep(votes);
     if(votes.length === 0) {
       votes.push({_id: vote.vote, count: 1});
     } else {
@@ -117,7 +118,7 @@ export class HomeFacadeService {
       }
     }
 
-    return cloneDeep(votes);
+    return votes;
   }
 
   private addVote(vote: Vote) {
